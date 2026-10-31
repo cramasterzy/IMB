@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>共享画板</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="viewer.css" />
+  </head>
+  <body>
+    <main id="viewport">
+      <div id="grid"></div>
+      <div id="world"></div>
+    </main>
+    <header id="toolbar">
+      <div class="brand"><span>∞</span><strong id="title">共享画板</strong><em>只读</em></div>
+      <div class="actions">
+        <button id="restart">从头播放</button>
+        <button id="play">暂停全部</button>
+        <button id="resume">继续播放</button>
+        <button id="mute" aria-pressed="false">静音</button>
+        <button id="fit">适应</button>
+        <span id="zoom">100%</span>
+      </div>
+    </header>
+    <script src="board-data.js"></script>
+    <script src="viewer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' file: data: blob:; style-src 'self' 'unsafe-inline'; media-src 'self' file: data: blob:; img-src 'self' file: data: blob:; script-src 'self';" />
+    <title>&#8203;</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav id="tabbar" aria-label="画板标签页">
+      <div class="tab-app-mark" aria-hidden="true">∞</div>
+      <div id="tabs"></div>
+      <button id="new-tab" title="新建画板 (Ctrl+T)" aria-label="新建画板">＋</button>
+    </nav>
+
+    <main id="viewport" tabindex="0">
+      <div id="grid"></div>
+      <div id="world"></div>
+      <div id="snap-guides"></div>
+      <div id="selection-outline">
+        <div class="group-resize-handle nw" data-direction="nw"></div>
+        <div class="group-resize-handle n" data-direction="n"></div>
+        <div class="group-resize-handle ne" data-direction="ne"></div>
+        <div class="group-resize-handle e" data-direction="e"></div>
+        <div class="group-resize-handle se" data-direction="se"></div>
+        <div class="group-resize-handle s" data-direction="s"></div>
+        <div class="group-resize-handle sw" data-direction="sw"></div>
+        <div class="group-resize-handle w" data-direction="w"></div>
+      </div>
+      <div id="selection-marquee"></div>
+      <div id="drop-hint">松开以添加媒体</div>
+    </main>
+
+    <header id="toolbar">
+      <div class="toolbar-group">
+        <button id="open" title="打开画板 (Ctrl+O)">打开</button>
+        <button id="save" title="保存画板 (Ctrl+S)">保存</button>
+        <div class="share-control">
+          <button id="share" title="选择可编辑或只读分享版本" aria-haspopup="menu" aria-expanded="false">分享</button>
+          <div id="share-menu" class="share-menu" role="menu" hidden>
+            <button data-share-mode="editable" role="menuitem"><strong>可编辑版本</strong></button>
+            <button data-share-mode="readonly" role="menuitem"><strong>只读版本</strong></button>
+          </div>
+        </div>
+        <button id="text" title="创建 MiSans 文本框">文本</button>
+      </div>
+      <div class="toolbar-group toolbar-right">
+        <button id="arrange-all" title="一键紧凑排版 (Ctrl+Alt+T)">一键排版</button>
+        <button id="arrange-by-type" title="按图片、GIF、视频分类排版 (Ctrl+Alt+G)">分类排版</button>
+        <button id="restart-all" title="所有视频从头播放">从头播放</button>
+        <button id="play-all" title="暂停所有视频">暂停全部</button>
+        <button id="resume-all" title="所有视频从当前位置继续播放">继续播放</button>
+        <button id="mute" title="强制静音所有视频，包括鼠标悬停" aria-pressed="false">静音</button>
+        <button id="fit" title="显示全部 (F)">适应</button>
+        <button id="pin" title="窗口置顶">置顶</button>
+        <span id="zoom-label">100%</span>
+      </div>
+    </header>
+
+    <footer id="statusbar">
+      <span id="item-count">0 个项目</span>
+      <span id="status-text">就绪</span>
+      <span>Ctrl+[ / ] 调整层级 · Ctrl+C/V 复制粘贴 · Ctrl+Z 撤销</span>
+    </footer>
+    <div id="toast"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+MiSans Font Notice
+
+This software uses the MiSans font by Xiaomi Inc.
+MiSans is embedded for rendering text created in Infinite Media Board and its exported read-only share pages.
+
+Official font page and license:
+https://hyperos.mi.com/font/en/download/
+
+The official license document is included as MiSans-License.pdf.

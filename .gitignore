@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Electron build output and historical local packages
+release/
+release-*/
+release-update*/
+current/
+*.zip
+
+# User board files and temporary media
+*.imb
+*.tmp
+*.temp
+
+# Logs and operating-system metadata
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE settings
+.idea/
+.vscode/

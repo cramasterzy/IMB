@@ -1,0 +1,59 @@
+{
+  "name": "infinite-media-board",
+  "version": "0.18.0",
+  "description": "An infinite desktop reference board with real-time video and GIF playback.",
+  "main": "electron/main.js",
+  "author": "CramasterZY",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis",
+    "pack": "electron-builder --dir"
+  },
+  "devDependencies": {
+    "electron": "44.0.0",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "com.cramasterzy.infinitemediaboard",
+    "productName": "Infinite Media Board",
+    "asar": true,
+    "fileAssociations": [
+      {
+        "ext": "imb",
+        "name": "Infinite Media Board 画板",
+        "description": "Infinite Media Board 画板文件",
+        "role": "Editor"
+      }
+    ],
+    "files": [
+      "electron/**/*",
+      "src/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "Infinite-Media-Board-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "fflate": "^0.8.2"
+  }
+}
