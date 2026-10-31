@@ -57,11 +57,29 @@ $startMenuDirectory = Join-Path ([Environment]::GetFolderPath('StartMenu')) 'Pro
 New-Item -ItemType Directory -Path $startMenuDirectory -Force | Out-Null
 $startMenuShortcut = Join-Path $startMenuDirectory 'IMB.lnk'
 $legacyStartMenuShortcut = 'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Infinite Media Board.lnk'
-if (Test-Path -LiteralPath $legacyStartMenuShortcut) {
-  try { Remove-Item -LiteralPath $legacyStartMenuShortcut -Force } catch { }
-}
 
 $shell = New-Object -ComObject WScript.Shell
+if (Test-Path -LiteralPath $legacyStartMenuShortcut) {
+  $legacyShortcut = $shell.CreateShortcut($legacyStartMenuShortcut)
+  $legacyShortcut.TargetPath = $currentExe
+  $legacyShortcut.WorkingDirectory = $currentDirectory
+  $legacyShortcut.IconLocation = "$currentExe,0"
+  $legacyShortcut.Description = 'IMB — Infinite Media Board'
+  try {
+    $legacyShortcut.Save()
+  } catch {
+    $legacyAcl = Get-Acl -LiteralPath $legacyStartMenuShortcut
+    $legacyUser = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
+    $legacyRule = New-Object System.Security.AccessControl.FileSystemAccessRule(
+      $legacyUser,
+      [System.Security.AccessControl.FileSystemRights]::Modify,
+      [System.Security.AccessControl.AccessControlType]::Allow
+    )
+    $legacyAcl.SetAccessRule($legacyRule)
+    Set-Acl -LiteralPath $legacyStartMenuShortcut -AclObject $legacyAcl
+    $legacyShortcut.Save()
+  }
+}
 $existingTarget = if (Test-Path -LiteralPath $startMenuShortcut) {
   $shell.CreateShortcut($startMenuShortcut).TargetPath
 } else { '' }
