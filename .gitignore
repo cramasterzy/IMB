@@ -24,3 +24,8 @@ Desktop.ini
 # IDE settings
 .idea/
 .vscode/
+
+# Local browser-test artifacts
+.playwright-cli/
+output/
+deliverables/

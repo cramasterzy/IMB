@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#151619" />
+    <meta name="description" content="IMB — 像 PureRef 一样自由，专为视频、GIF、图片和文字打造的无限媒体画板。" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; media-src 'self' data: blob:; img-src 'self' data: blob:; script-src 'self';" />
+    <title>IMB — Infinite Media Board Web</title>
+    <link rel="icon" type="image/svg+xml" href="imb-icon.svg" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav id="tabbar" aria-label="画板标签页">
+      <div class="tab-app-mark" aria-hidden="true"><img src="imb-icon.svg" alt="" /></div>
+      <div id="tabs"></div>
+      <button id="new-tab" title="新建画板 (Ctrl+T)" aria-label="新建画板">＋</button>
+    </nav>
+    <main id="viewport" tabindex="0">
+      <div id="grid"></div><div id="world"></div><div id="snap-guides"></div>
+      <div id="selection-outline">
+        <div class="group-resize-handle nw" data-direction="nw"></div><div class="group-resize-handle n" data-direction="n"></div>
+        <div class="group-resize-handle ne" data-direction="ne"></div><div class="group-resize-handle e" data-direction="e"></div>
+        <div class="group-resize-handle se" data-direction="se"></div><div class="group-resize-handle s" data-direction="s"></div>
+        <div class="group-resize-handle sw" data-direction="sw"></div><div class="group-resize-handle w" data-direction="w"></div>
+      </div>
+      <div id="selection-marquee"></div><div id="drop-hint">松开以添加媒体</div>
+    </main>
+    <header id="toolbar">
+      <div class="toolbar-group">
+        <button id="open" title="打开浏览器画板 (Ctrl+O)">打开</button><button id="save" title="保存到当前浏览器 (Ctrl+S)">保存</button>
+        <div class="share-control"><button id="share" title="选择分享版本" aria-haspopup="menu" aria-expanded="false">分享</button><div id="share-menu" class="share-menu" role="menu" hidden><button data-share-mode="editable" role="menuitem"><strong>可编辑版本</strong></button><button data-share-mode="readonly" role="menuitem"><strong>只读版本</strong></button></div></div><button id="text" title="创建 MiSans 文本框">文本</button>
+      </div>
+      <div class="toolbar-group toolbar-right">
+        <button id="arrange-all">一键排版</button><button id="arrange-by-type">分类排版</button><button id="restart-all">从头播放</button>
+        <button id="play-all">暂停全部</button><button id="resume-all">继续播放</button><button id="mute" aria-pressed="false">静音</button><button id="fit">适应</button>
+        <button id="pin" title="网页版不支持窗口置顶">置顶</button><span id="zoom-label">100%</span>
+      </div>
+    </header>
+    <footer id="statusbar"><span id="item-count">0 个项目</span><span id="status-text">浏览器本地自动保存</span><span></span></footer>
+    <div id="toast"></div>
+    <script src="board-data.js"></script><script src="template-data.js"></script><script src="media-loader.js"></script><script src="fflate.js"></script><script src="web-api.js"></script><script src="app.js"></script><script src="register.js"></script>
+  </body>
+</html>

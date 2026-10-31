@@ -71,6 +71,13 @@ button.active { color: #111; background: var(--accent); border-color: var(--acce
   font-weight: 700;
 }
 
+.tab-app-mark img {
+  display: block;
+  width: 27px;
+  height: 27px;
+  object-fit: contain;
+}
+
 #tabs {
   min-width: 0;
   display: flex;

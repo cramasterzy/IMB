@@ -324,7 +324,7 @@ function requestExit() {
 function createTray() {
   if (tray) return;
   tray = new Tray(path.join(__dirname, 'tray.ico'));
-  tray.setToolTip('Infinite Media Board');
+  tray.setToolTip('IMB — Infinite Media Board');
   tray.setContextMenu(Menu.buildFromTemplate([
     { label: '显示画板', click: showMainWindow },
     { type: 'separator' },
@@ -420,7 +420,7 @@ ipcMain.handle('board:save', async (_event, payload) => {
     const result = await dialog.showSaveDialog(mainWindow, {
       title: '保存画板',
       defaultPath: '未命名画板.imb',
-      filters: [{ name: 'Infinite Media Board', extensions: ['imb'] }]
+      filters: [{ name: 'IMB — Infinite Media Board', extensions: ['imb'] }]
     });
     if (result.canceled) return null;
     targetPath = result.filePath;
@@ -433,7 +433,7 @@ ipcMain.handle('board:open', async () => {
   const result = await dialog.showOpenDialog(mainWindow, {
     title: '打开画板',
     properties: ['openFile'],
-    filters: [{ name: 'Infinite Media Board', extensions: ['imb'] }]
+    filters: [{ name: 'IMB — Infinite Media Board', extensions: ['imb'] }]
   });
   if (result.canceled || !result.filePaths[0]) return null;
   return openBoardFile(result.filePaths[0]);

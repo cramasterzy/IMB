@@ -1,40 +1,46 @@
 {
   "name": "infinite-media-board",
-  "version": "0.18.0",
-  "description": "An infinite desktop reference board with real-time video and GIF playback.",
+  "version": "0.19.0",
+  "description": "IMB — a PureRef-style infinite canvas built for real-time video, GIF, images and text.",
   "main": "electron/main.js",
   "author": "CramasterZY",
   "license": "UNLICENSED",
   "scripts": {
     "start": "electron .",
+    "build:brand": "node tools/render-brand.mjs",
+    "build:web": "node tools/build-web.mjs",
+    "package:deliverables": "node tools/package-deliverables.mjs",
     "dist": "electron-builder --win nsis",
     "pack": "electron-builder --dir"
   },
   "devDependencies": {
     "electron": "44.0.0",
-    "electron-builder": "26.15.3"
+    "electron-builder": "26.15.3",
+    "sharp": "^0.34.4"
   },
   "build": {
     "appId": "com.cramasterzy.infinitemediaboard",
-    "productName": "Infinite Media Board",
+    "productName": "IMB",
     "asar": true,
     "fileAssociations": [
       {
         "ext": "imb",
-        "name": "Infinite Media Board 画板",
-        "description": "Infinite Media Board 画板文件",
+        "name": "IMB 画板",
+        "description": "IMB 画板文件",
         "role": "Editor"
       }
     ],
     "files": [
       "electron/**/*",
       "src/**/*",
+      "build/icon.png",
       "package.json"
     ],
     "directories": {
       "output": "release"
     },
     "win": {
+      "icon": "build/icon.ico",
       "target": [
         {
           "target": "nsis",
@@ -43,13 +49,14 @@
           ]
         }
       ],
-      "artifactName": "Infinite-Media-Board-Setup-${version}.${ext}"
+      "artifactName": "IMB-Setup-${version}.${ext}"
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
-      "createStartMenuShortcut": true
+      "createStartMenuShortcut": true,
+      "shortcutName": "IMB"
     }
   },
   "dependencies": {

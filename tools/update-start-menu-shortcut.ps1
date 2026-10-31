@@ -13,11 +13,13 @@ $resolvedExe = (Resolve-Path -LiteralPath $LatestExe -ErrorAction Stop).Path
 $latestDirectory = Split-Path -Parent $resolvedExe
 $projectDirectory = Split-Path -Parent $PSScriptRoot
 $currentDirectory = Join-Path $projectDirectory 'current\win-unpacked'
-$currentExe = Join-Path $currentDirectory 'Infinite Media Board.exe'
+$currentExe = Join-Path $currentDirectory 'IMB.exe'
+$legacyCurrentExe = Join-Path $currentDirectory 'Infinite Media Board.exe'
 
 function Get-RunningCurrentProcesses {
   Get-CimInstance Win32_Process | Where-Object {
-    $_.Name -eq 'Infinite Media Board.exe' -and $_.ExecutablePath -eq $currentExe
+    ($_.Name -eq 'IMB.exe' -and $_.ExecutablePath -eq $currentExe) -or
+    ($_.Name -eq 'Infinite Media Board.exe' -and $_.ExecutablePath -eq $legacyCurrentExe)
   }
 }
 
@@ -45,11 +47,19 @@ while (@(Get-RunningCurrentProcesses).Count -gt 0) {
   Start-Sleep -Seconds 1
 }
 
+if (Test-Path -LiteralPath $currentDirectory) {
+  Remove-Item -LiteralPath $currentDirectory -Recurse -Force
+}
 New-Item -ItemType Directory -Path $currentDirectory -Force | Out-Null
 Copy-Item -Path (Join-Path $latestDirectory '*') -Destination $currentDirectory -Recurse -Force
 
-$startMenuDirectory = 'C:\ProgramData\Microsoft\Windows\Start Menu\Programs'
-$startMenuShortcut = Join-Path $startMenuDirectory 'Infinite Media Board.lnk'
+$startMenuDirectory = Join-Path ([Environment]::GetFolderPath('StartMenu')) 'Programs'
+New-Item -ItemType Directory -Path $startMenuDirectory -Force | Out-Null
+$startMenuShortcut = Join-Path $startMenuDirectory 'IMB.lnk'
+$legacyStartMenuShortcut = 'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Infinite Media Board.lnk'
+if (Test-Path -LiteralPath $legacyStartMenuShortcut) {
+  try { Remove-Item -LiteralPath $legacyStartMenuShortcut -Force } catch { }
+}
 
 $shell = New-Object -ComObject WScript.Shell
 $existingTarget = if (Test-Path -LiteralPath $startMenuShortcut) {
@@ -61,7 +71,7 @@ if ($existingTarget -ne $currentExe) {
   $shortcut.TargetPath = $currentExe
   $shortcut.WorkingDirectory = $currentDirectory
   $shortcut.IconLocation = "$currentExe,0"
-  $shortcut.Description = 'Infinite Media Board'
+  $shortcut.Description = 'IMB — Infinite Media Board'
   try {
     $shortcut.Save()
   } catch {
@@ -80,12 +90,16 @@ if ($existingTarget -ne $currentExe) {
 }
 
 $desktopDirectory = [Environment]::GetFolderPath('Desktop')
-$desktopShortcut = Join-Path $desktopDirectory 'Infinite Media Board.lnk'
+$desktopShortcut = Join-Path $desktopDirectory 'IMB.lnk'
+$legacyDesktopShortcut = Join-Path $desktopDirectory 'Infinite Media Board.lnk'
+if (Test-Path -LiteralPath $legacyDesktopShortcut) {
+  Remove-Item -LiteralPath $legacyDesktopShortcut -Force
+}
 $desktopLink = $shell.CreateShortcut($desktopShortcut)
 $desktopLink.TargetPath = $currentExe
 $desktopLink.WorkingDirectory = $currentDirectory
 $desktopLink.IconLocation = "$currentExe,0"
-$desktopLink.Description = 'Infinite Media Board'
+$desktopLink.Description = 'IMB — Infinite Media Board'
 $desktopLink.Save()
 
 $saved = $shell.CreateShortcut($startMenuShortcut)

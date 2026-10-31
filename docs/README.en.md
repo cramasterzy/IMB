@@ -1,10 +1,22 @@
-# Infinite Media Board — English Guide
+# IMB — Infinite Media Board English Guide
 
-[Home](../README.md) · [中文](README.zh-CN.md) · [Download latest](../../../releases/latest)
+<p align="center"><img src="images/IMB-logo.svg" alt="IMB" width="720"></p>
+
+[Home](../README.md) · [中文](README.zh-CN.md) · [Open Web App](https://cramasterzy.github.io/Infinite-Media-Board/web/) · [Download latest](../../../releases/latest)
 
 ![Infinite Media Board interface](images/board-overview.png)
 
-Infinite Media Board is a Windows infinite canvas built for visual design, motion review, inspiration collection, and media comparison. Images, GIFs, videos, and text can live freely on the same canvas. Video and GIF content plays in real time, while a board can be saved as a single self-contained `.imb` file with all media embedded.
+IMB (Infinite Media Board) offers PureRef-style freedom with a canvas built specifically for video, GIF, audio, and motion review. The desktop edition provides the complete native Windows workflow, while the web edition runs directly in macOS and Windows browsers. Images, GIFs, videos, and text live together in real time, and desktop boards can be saved as a single self-contained `.imb` file with all media embedded.
+
+## How IMB differs from PureRef
+
+PureRef remains a mature and powerful tool for still-image reference management, with GIF support added in 2.0. IMB focuses on motion workflows: multiple real-time videos, hover audio, frame stepping, global pause/resume/restart, and browser access or sharing without installing the desktop app. The comparison uses the [official PureRef feature handbook](https://www.pureref.com/handbook/features/) and [official format support page](https://www.pureref.com/support.php). IMB is not affiliated with PureRef.
+
+## Available editions
+
+- Web: runs in macOS and Windows browsers and can be installed as a standalone PWA.
+- Windows installer: standard installation, Start Menu entry, and `.imb` file association.
+- Windows portable: extract and run without installation.
 
 ## Feature overview
 
@@ -103,7 +115,7 @@ Build the Windows installer:
 npm run dist
 ```
 
-Build artifacts are written to the `release` directory. The project uses Electron 44 and the current application version is v0.18.0.
+Build artifacts are written to the `release` directory. The project uses Electron 44 and the current application version is v0.19.0.
 
 ## Performance note
 

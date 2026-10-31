@@ -1,21 +1,45 @@
-# Infinite Media Board
+<h1 align="center">IMB — 像 PureRef 一样自由，为视频与 GIF 而生</h1>
+
+<p align="center"><img src="docs/images/IMB-logo.svg" alt="IMB" width="720"></p>
 
 <p align="center">
-  <strong>把图片、GIF、视频和文字放进一张真正自由的无限画布。</strong><br>
-  <strong>Place images, GIFs, videos, and text on one truly free infinite canvas.</strong>
+  <strong>PureRef-style freedom, rebuilt for real-time video, GIF, images, and text.</strong><br>
+  不只是静态参考板：把动态灵感、声音和逐帧审片一起放进无限画布。
 </p>
 
 <p align="center">
   <a href="docs/README.zh-CN.md">中文说明</a> ·
   <a href="docs/README.en.md">English</a> ·
+  <a href="https://cramasterzy.github.io/Infinite-Media-Board/web/">在线使用 / Open Web App</a> ·
   <a href="../../releases/latest">下载最新版 / Download</a>
 </p>
 
 ![Infinite Media Board overview](docs/images/board-overview.png)
 
-Infinite Media Board 是一款面向 Windows 的桌面媒体画板，灵感来自 PureRef 与 Figma 的自由工作方式。它能在同一张无限画布上实时展示图片、GIF、视频和文字，支持多选、智能吸附、紧凑排版、视频逐帧查看以及跨平台 HTML 分享。
+IMB（Infinite Media Board）是一款从 PureRef 式自由参考板工作流出发、专门强化动态媒体体验的无限画布。它让图片、GIF、视频和文字在同一空间中实时共存，并加入视频声音悬停、逐帧查看、同步播放、多选排版、Figma 风格吸附和跨平台网页分享。
 
-Infinite Media Board is a Windows desktop media board inspired by the free-form workflows of PureRef and Figma. It keeps images, GIFs, videos, and text together on an infinite canvas with multi-selection, smart snapping, compact layout, frame-by-frame video review, and cross-platform HTML sharing.
+IMB (Infinite Media Board) starts with the freedom of a PureRef-style reference canvas and extends it for motion work. Images, GIFs, videos, and text live together in real time, with hover audio, frame stepping, synchronized playback, multi-item layout, Figma-style snapping, and cross-platform web sharing.
+
+## 为什么选择 IMB？/ Why IMB?
+
+如果你的参考内容主要是静态图片，PureRef 依然是成熟而强大的选择。IMB 的重点不是简单复制 PureRef，而是补上动态视觉工作流：在参考板里直接播放多个视频、听取悬停素材声音、逐帧检查、同步暂停或继续，并把画板分享给没有安装桌面软件的人。
+
+If your references are mainly still images, PureRef remains a mature and powerful choice. IMB focuses on a different gap: motion references, synchronized video review, audio-on-hover, frame stepping, and browser-based sharing for people who do not have the desktop app.
+
+| 能力 / Capability | PureRef 2.x | IMB 0.19 |
+| --- | --- | --- |
+| 无限图片参考画布 / Infinite image canvas | ✓ | ✓ |
+| 动态 GIF / Animated GIF | ✓ | ✓ |
+| 多视频实时播放 / Multiple real-time videos | 官方格式说明未列出视频 / Video not listed in official format support | ✓ |
+| 悬停单独听声 / Hover audio | — | ✓ |
+| 视频逐帧前进、后退 / Video frame stepping | — | ✓ |
+| 全部暂停、继续、从头同步 / Global pause, resume, restart | — | ✓ |
+| 自包含项目文件 / Embedded project media | 图片可嵌入 / Images can be embedded | 图片、GIF、视频均嵌入 / Images, GIFs, and videos embedded |
+| 无需安装的网页使用 / No-install web app | — | ✓ |
+| 可编辑与只读网页分享 / Editable & read-only web sharing | — | ✓ |
+| 桌面平台 / Desktop platforms | Windows / macOS / Linux | Windows 安装版与便携版 / Windows installer & portable |
+
+PureRef 对比信息依据其[官方功能手册](https://www.pureref.com/handbook/features/)与[官方格式支持说明](https://www.pureref.com/support.php)。PureRef 是其权利人的商标，IMB 与 PureRef 官方无关联。
 
 ## 主要功能 / Highlights
 
@@ -36,11 +60,23 @@ Infinite Media Board is a Windows desktop media board inspired by the free-form 
 
 ![Composite export example](docs/images/composite-export.png)
 
+## 三种使用方式 / Three ways to use IMB
+
+| 版本 | 适合谁 | 使用方式 |
+| --- | --- | --- |
+| 网页版 / Web | macOS、Windows，免安装 | [立即打开 IMB Web](https://cramasterzy.github.io/Infinite-Media-Board/web/) |
+| Windows 安装版 / Installer | 日常稳定使用、文件关联 | 在 [Releases](../../releases/latest) 下载 Setup EXE |
+| Windows 便携版 / Portable | U 盘、临时电脑、免安装 | 在 [Releases](../../releases/latest) 下载 Portable ZIP |
+
+网页版数据默认保存在当前浏览器本地，不会自动上传素材。桌面版提供完整 `.imb` 自包含项目文件与系统级快捷方式。
+
+The web app stores projects and media locally in the current browser by default. The desktop app provides full self-contained `.imb` projects and native Windows integration.
+
 ## 快速开始 / Quick start
 
-下载 GitHub Releases 中的便携版 ZIP，解压后运行 `Infinite Media Board.exe`。首次运行不需要安装。
+下载 GitHub Releases 中的安装版，或下载便携版 ZIP 后解压运行 `Infinite Media Board.exe`。
 
-Download the portable ZIP from GitHub Releases, extract it, and run `Infinite Media Board.exe`. No installation is required.
+Download the Windows installer, or extract the portable ZIP and run `Infinite Media Board.exe`.
 
 开发版 / Development:
 

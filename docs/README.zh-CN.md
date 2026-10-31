@@ -1,10 +1,22 @@
-# Infinite Media Board 中文说明
+# IMB — Infinite Media Board 中文说明
 
-[返回主页](../README.md) · [English](README.en.md) · [下载最新版](../../../releases/latest)
+<p align="center"><img src="images/IMB-logo.svg" alt="IMB" width="720"></p>
+
+[返回主页](../README.md) · [English](README.en.md) · [在线使用](https://cramasterzy.github.io/Infinite-Media-Board/web/) · [下载最新版](../../../releases/latest)
 
 ![Infinite Media Board 主界面](images/board-overview.png)
 
-Infinite Media Board 是一款为视觉设计、动效审片、灵感收集和媒体对照而设计的 Windows 无限画板。图片、GIF、视频和文字可以自由放置在同一张画布中；视频与 GIF 能实时播放，画板也可以保存成包含全部素材的单一 `.imb` 文件。
+IMB（Infinite Media Board）是一款像 PureRef 一样自由、但专为视频、GIF、声音与动效审片强化的无限媒体画板。桌面版提供完整的 Windows 原生体验，网页版可直接在 macOS 或 Windows 浏览器中使用。图片、GIF、视频和文字可以自由放置在同一张画布中，桌面画板还能保存成包含全部素材的单一 `.imb` 文件。
+
+## 与 PureRef 的定位差异
+
+PureRef 在静态图片参考管理方面成熟而强大，并从 2.0 开始支持 GIF。IMB 的核心卖点是动态媒体工作流：多个视频同时实时播放、悬停听声、逐帧检查、全部暂停/继续/从头播放，以及无需安装软件的网页使用与分享。对比依据 [PureRef 官方功能手册](https://www.pureref.com/handbook/features/)与[官方格式支持说明](https://www.pureref.com/support.php)。IMB 与 PureRef 官方无关联。
+
+## 可用版本
+
+- 网页版：macOS、Windows 浏览器直接使用，可安装为独立 PWA 窗口。
+- Windows 安装版：提供标准安装、开始菜单与 `.imb` 文件关联。
+- Windows 便携版：解压即用，不需要安装。
 
 ## 功能概览
 
@@ -103,7 +115,7 @@ npm start
 npm run dist
 ```
 
-输出文件位于 `release` 文件夹。项目采用 Electron 44，应用版本为 v0.18.0。
+输出文件位于 `release` 文件夹。项目采用 Electron 44，应用版本为 v0.19.0。
 
 ## 性能说明
 
