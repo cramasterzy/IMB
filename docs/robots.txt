@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cramasterzy.github.io/IMB/sitemap.xml

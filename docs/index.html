@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111316" />
+    <title>IMB 无限画布 — PureRef Alternative for Video, GIF &amp; Images</title>
+    <meta name="description" content="IMB 是免费的无限画布与视觉参考板，支持图片、GIF、视频和文字实时混排。A free PureRef alternative and infinite canvas for video, GIF, images and text." />
+    <meta name="keywords" content="无限画布,无限画板,参考图软件,PureRef,PureRef alternative,infinite canvas,infinite board,visual reference board,video moodboard,GIF board,IMB" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://cramasterzy.github.io/IMB/" />
+    <link rel="icon" type="image/svg+xml" href="web/imb-icon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="IMB" />
+    <meta property="og:title" content="IMB 无限画布 — PureRef Alternative for Video, GIF &amp; Images" />
+    <meta property="og:description" content="免费、免安装的无限画布与视觉参考板：实时播放视频和 GIF，自由管理图片与文字。" />
+    <meta property="og:url" content="https://cramasterzy.github.io/IMB/" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/cramasterzy/IMB/main/docs/images/board-overview.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "IMB",
+        "alternateName": ["Infinite Media Board", "IMB 无限画布", "IMB Infinite Canvas"],
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Windows, macOS, Web",
+        "url": "https://cramasterzy.github.io/IMB/",
+        "downloadUrl": "https://github.com/cramasterzy/IMB/releases/latest",
+        "softwareHelp": "https://github.com/cramasterzy/IMB",
+        "description": "A free PureRef-style infinite canvas and visual reference board for video, GIF, images and text.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "isAccessibleForFree": true
+      }
+    </script>
+    <style>
+      :root { color-scheme: dark; --bg:#111316; --panel:#191c20; --line:#2a2e34; --text:#f5f7f8; --muted:#a9b0b8; --green:#9afa42; }
+      * { box-sizing: border-box; }
+      body { margin:0; background:var(--bg); color:var(--text); font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif; }
+      main { width:min(1040px,calc(100% - 40px)); margin:auto; padding:72px 0 64px; }
+      header { max-width:850px; }
+      .brand { display:flex; align-items:center; gap:12px; color:var(--green); font-weight:800; letter-spacing:.08em; }
+      .brand img { width:30px; height:30px; object-fit:contain; }
+      h1 { margin:22px 0 18px; font-size:clamp(38px,7vw,74px); line-height:1.08; letter-spacing:-.04em; }
+      h1 span { color:var(--green); }
+      .lead { max-width:780px; color:var(--muted); font-size:clamp(18px,2.3vw,23px); }
+      .actions { display:flex; flex-wrap:wrap; gap:12px; margin:32px 0 56px; }
+      .button { display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border:1px solid var(--line); border-radius:10px; color:var(--text); text-decoration:none; font-weight:700; }
+      .button.primary { background:var(--green); color:#111; border-color:var(--green); }
+      .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+      .card { padding:24px; background:var(--panel); border:1px solid var(--line); border-radius:14px; }
+      .card h2 { margin:0 0 8px; font-size:20px; }
+      .card p { margin:0; color:var(--muted); }
+      section { margin-top:56px; }
+      section h2 { font-size:30px; margin:0 0 14px; }
+      section p { color:var(--muted); max-width:850px; }
+      footer { margin-top:56px; padding-top:22px; border-top:1px solid var(--line); color:var(--muted); }
+      footer a { color:var(--text); }
+      @media (max-width:760px) { main{padding-top:44px}.grid{grid-template-columns:1fr} }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="brand"><img src="web/imb-icon.svg" alt="IMB Logo" /> IMB</div>
+        <h1><span>无限画布</span>，为视频与 GIF 而生</h1>
+        <p class="lead">IMB 是免费的无限画板与视觉参考软件，也是面向动态素材的 PureRef alternative。图片、GIF、视频和文字可以在同一个 infinite canvas 中自由排列、实时播放和分享。</p>
+        <p class="lead" lang="en">A free infinite canvas and visual reference board for video, GIF, images and text — a PureRef-style workflow rebuilt for motion references.</p>
+        <div class="actions">
+          <a class="button primary" href="web/">立即打开网页版</a>
+          <a class="button" href="https://github.com/cramasterzy/IMB/releases/latest">下载 Windows 版</a>
+          <a class="button" href="https://github.com/cramasterzy/IMB">查看 GitHub 项目</a>
+        </div>
+      </header>
+
+      <div class="grid" aria-label="核心功能">
+        <article class="card"><h2>无限画布 / Infinite Canvas</h2><p>自由缩放、平移、多选、吸附和排版，适合灵感收集、情绪板与视觉参考。</p></article>
+        <article class="card"><h2>视频与 GIF 实时播放</h2><p>多个动态素材同时播放，支持悬停声音、逐帧查看、全部暂停和继续播放。</p></article>
+        <article class="card"><h2>无需安装即可分享</h2><p>浏览器直接打开；也能导出可编辑或只读分享包，让没有安装 IMB 的人查看画板。</p></article>
+      </div>
+
+      <section>
+        <h2>寻找 PureRef 替代方案？</h2>
+        <p>PureRef 是成熟的静态参考图管理工具。IMB 延续自由参考板的工作方式，并把重点放在视频、GIF、声音、逐帧审片和跨平台网页分享上。IMB 与 PureRef 官方无关联。</p>
+        <p lang="en">Looking for a PureRef alternative for motion work? IMB combines an infinite reference canvas with real-time video, animated GIF, frame stepping, hover audio, smart layout and browser sharing.</p>
+      </section>
+
+      <footer>IMB · Infinite Media Board · <a href="https://github.com/cramasterzy/IMB">Open-source project on GitHub</a></footer>
+    </main>
+  </body>
+</html>

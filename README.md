@@ -12,11 +12,11 @@
   <a href="../../releases/latest">下载最新版 / Download</a>
 </p>
 
-![Infinite Media Board overview](docs/images/board-overview.png)
+![IMB infinite canvas and PureRef alternative for video, GIF and images](docs/images/board-overview.png)
 
-IMB（Infinite Media Board）是一款从 PureRef 式自由参考板工作流出发、专门强化动态媒体体验的无限画布。它让图片、GIF、视频和文字在同一空间中实时共存，并加入视频声音悬停、逐帧查看、同步播放、多选排版、Figma 风格吸附和跨平台网页分享。
+IMB（Infinite Media Board）是一款免费开源的无限画布、无限画板与视觉参考软件，也是一款面向动态素材工作流的 PureRef alternative。它让图片、GIF、视频和文字在同一空间中实时共存，并加入视频声音悬停、逐帧查看、同步播放、多选排版、Figma 风格吸附和跨平台网页分享。
 
-IMB (Infinite Media Board) starts with the freedom of a PureRef-style reference canvas and extends it for motion work. Images, GIFs, videos, and text live together in real time, with hover audio, frame stepping, synchronized playback, multi-item layout, Figma-style snapping, and cross-platform web sharing.
+IMB (Infinite Media Board) is a free, open-source infinite canvas and visual reference board — a PureRef alternative designed for motion work. Images, GIFs, videos, and text live together in real time, with hover audio, frame stepping, synchronized playback, multi-item layout, Figma-style snapping, and cross-platform web sharing.
 
 ## 为什么选择 IMB？/ Why IMB?
 
