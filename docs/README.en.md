@@ -18,7 +18,7 @@ PureRef remains a mature and powerful tool for still-image reference management,
 
 ## Feature overview
 
-### Infinite canvas and media
+### Unlimited canvas and media
 
 - Pan across an infinite canvas and zoom the view from 5% to 800%.
 - Wheel zoom snaps to 5% increments; double-click the zoom value to enter any custom percentage.

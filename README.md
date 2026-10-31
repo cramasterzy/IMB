@@ -1,7 +1,7 @@
 <h1 align="center">IMB — 像 PureRef 一样自由，为视频与 GIF 而生</h1>
 
 <p align="center">
-  <strong>Infinite Media Board — an infinite canvas and PureRef alternative for video, GIF, images, and text.</strong><br>
+  <strong>Infinite Media Board — a PureRef-style visual workspace for video, GIF, images, and text.</strong><br>
   不只是静态参考板：把动态灵感、声音和逐帧审片一起放进无限画布。
 </p>
 
@@ -12,11 +12,11 @@
   <a href="../../releases/latest">下载最新版 / Download</a>
 </p>
 
-![IMB infinite canvas and PureRef alternative for video, GIF and images](docs/images/board-overview.png)
+![IMB — Infinite Media Board for video, GIF, images and text](docs/images/board-overview.png)
 
 IMB（Infinite Media Board）是一款免费开源的无限画布、无限画板与视觉参考软件，也是一款面向动态素材工作流的 PureRef alternative。它让图片、GIF、视频和文字在同一空间中实时共存，并加入视频声音悬停、逐帧查看、同步播放、多选排版、Figma 风格吸附和跨平台网页分享。
 
-IMB (Infinite Media Board) is a free, open-source infinite canvas and visual reference board — a PureRef alternative designed for motion work. Images, GIFs, videos, and text live together in real time, with hover audio, frame stepping, synchronized playback, multi-item layout, Figma-style snapping, and cross-platform web sharing.
+IMB (Infinite Media Board) is a free, open-source visual reference workspace with an unlimited canvas — a PureRef alternative designed for motion work. Images, GIFs, videos, and text live together in real time, with hover audio, frame stepping, synchronized playback, multi-item layout, Figma-style snapping, and cross-platform web sharing.
 
 ## 为什么选择 IMB？/ Why IMB?
 
@@ -42,7 +42,7 @@ PureRef 对比信息依据其[官方功能手册](https://www.pureref.com/handbo
 ## 主要功能 / Highlights
 
 - 图片、GIF、视频和文字共存；软件不设置素材数量上限（实际性能取决于硬件）
-- Infinite canvas for images, GIFs, videos, and text, with no artificial item limit
+- Unlimited visual workspace for images, GIFs, videos, and text, with no artificial item limit
 - GIF 与视频实时播放；视频默认静音，鼠标悬停时可单独听声
 - Real-time GIF/video playback with default mute and hover audio
 - Figma 风格边缘、中心与等间距吸附，绿色参考线实时反馈
@@ -72,9 +72,9 @@ The web app stores projects and media locally in the current browser by default.
 
 ## 快速开始 / Quick start
 
-下载 GitHub Releases 中的安装版，或下载便携版 ZIP 后解压运行 `Infinite Media Board.exe`。
+下载 GitHub Releases 中的安装版，或下载便携版 ZIP 后解压运行 `IMB.exe`。
 
-Download the Windows installer, or extract the portable ZIP and run `Infinite Media Board.exe`.
+Download the Windows installer, or extract the portable ZIP and run `IMB.exe`.
 
 开发版 / Development:
 

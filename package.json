@@ -1,7 +1,7 @@
 {
   "name": "infinite-media-board",
   "version": "0.19.0",
-  "description": "IMB — a PureRef-style infinite canvas built for real-time video, GIF, images and text.",
+  "description": "IMB — Infinite Media Board, a PureRef-style visual workspace for real-time video, GIF, images and text.",
   "main": "electron/main.js",
   "author": "CramasterZY",
   "license": "UNLICENSED",

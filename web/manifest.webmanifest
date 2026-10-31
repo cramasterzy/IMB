@@ -1,7 +1,7 @@
 {
   "name": "IMB — Infinite Media Board",
   "short_name": "IMB",
-  "description": "A PureRef-style infinite canvas built for real-time video, GIF, images and text.",
+  "description": "IMB — Infinite Media Board, a PureRef-style visual workspace for real-time video, GIF, images and text.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
