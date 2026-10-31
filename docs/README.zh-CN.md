@@ -1,8 +1,6 @@
 # IMB — Infinite Media Board 中文说明
 
-<p align="center"><img src="images/IMB-logo.svg" alt="IMB" width="720"></p>
-
-[返回主页](../README.md) · [English](README.en.md) · [在线使用](https://cramasterzy.github.io/Infinite-Media-Board/web/) · [下载最新版](../../../releases/latest)
+[返回主页](../README.md) · [English](README.en.md) · [在线使用](https://cramasterzy.github.io/IMB/web/) · [下载最新版](../../../releases/latest)
 
 ![Infinite Media Board 主界面](images/board-overview.png)
 

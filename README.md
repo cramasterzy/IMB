@@ -1,7 +1,5 @@
 <h1 align="center">IMB — 像 PureRef 一样自由，为视频与 GIF 而生</h1>
 
-<p align="center"><img src="docs/images/IMB-logo.svg" alt="IMB" width="720"></p>
-
 <p align="center">
   <strong>PureRef-style freedom, rebuilt for real-time video, GIF, images, and text.</strong><br>
   不只是静态参考板：把动态灵感、声音和逐帧审片一起放进无限画布。
@@ -10,7 +8,7 @@
 <p align="center">
   <a href="docs/README.zh-CN.md">中文说明</a> ·
   <a href="docs/README.en.md">English</a> ·
-  <a href="https://cramasterzy.github.io/Infinite-Media-Board/web/">在线使用 / Open Web App</a> ·
+  <a href="https://cramasterzy.github.io/IMB/web/">在线使用 / Open Web App</a> ·
   <a href="../../releases/latest">下载最新版 / Download</a>
 </p>
 
@@ -64,7 +62,7 @@ PureRef 对比信息依据其[官方功能手册](https://www.pureref.com/handbo
 
 | 版本 | 适合谁 | 使用方式 |
 | --- | --- | --- |
-| 网页版 / Web | macOS、Windows，免安装 | [立即打开 IMB Web](https://cramasterzy.github.io/Infinite-Media-Board/web/) |
+| 网页版 / Web | macOS、Windows，免安装 | [立即打开 IMB Web](https://cramasterzy.github.io/IMB/web/) |
 | Windows 安装版 / Installer | 日常稳定使用、文件关联 | 在 [Releases](../../releases/latest) 下载 Setup EXE |
 | Windows 便携版 / Portable | U 盘、临时电脑、免安装 | 在 [Releases](../../releases/latest) 下载 Portable ZIP |
 
