@@ -68,7 +68,7 @@ standaloneHtml = standaloneHtml
   .replace('<link rel="stylesheet" href="styles.css" />', `<style>${standaloneStyles}</style>`)
   .replaceAll('src="imb-icon.svg"', `src="${logoUrl}"`)
   .replace(/\s*<script src="board-data\.js"><\/script><script src="template-data\.js"><\/script><script src="media-loader\.js"><\/script><script src="fflate\.js"><\/script><script src="web-api\.js"><\/script><script src="app\.js"><\/script><script src="register\.js"><\/script>/,
-    `\n    <script>${standaloneScripts}</script>`);
+    () => `\n    <script>${standaloneScripts}</script>`);
 await writeFile(path.join(deliverables, 'IMB Web.html'), standaloneHtml);
 
 console.log(`Built hosted IMB Web at ${out}`);
