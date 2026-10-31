@@ -1454,13 +1454,15 @@ async function exportSelectedAsImage(sources = getSelectedItems()) {
   }
 }
 
-async function pasteClipboard() {
-  let content;
-  try {
-    content = await window.boardAPI.readClipboardMedia();
-  } catch (error) {
-    toast(`读取剪贴板失败：${error.message}`);
-    return;
+async function pasteClipboard(providedContent = null) {
+  let content = providedContent;
+  if (!content) {
+    try {
+      content = await window.boardAPI.readClipboardMedia();
+    } catch (error) {
+      toast(`读取剪贴板失败：${error.message}`);
+      return;
+    }
   }
 
   if (content.kind === 'paths') {
@@ -2127,7 +2129,12 @@ window.addEventListener('keydown', (event) => {
   else if (ctrl && event.shiftKey && event.key.toLowerCase() === 'z') { event.preventDefault(); redo(); }
   else if (ctrl && event.key.toLowerCase() === 'z') { event.preventDefault(); undo(); }
   else if (ctrl && event.key.toLowerCase() === 'c') { event.preventDefault(); copySelected(); }
-  else if (ctrl && event.key.toLowerCase() === 'v') { event.preventDefault(); pasteClipboard(); }
+  else if (ctrl && event.key.toLowerCase() === 'v') {
+    if (!window.boardAPI.nativePasteEvents) {
+      event.preventDefault();
+      pasteClipboard();
+    }
+  }
   else if (ctrl && event.altKey && event.key.toLowerCase() === 't') { event.preventDefault(); arrangeAll(); }
   else if (ctrl && event.altKey && event.key.toLowerCase() === 'g') { event.preventDefault(); arrangeByType(); }
   else if (ctrl && event.shiftKey && bracketLeft) { event.preventDefault(); changeLayer('back'); }
@@ -2143,6 +2150,7 @@ window.addEventListener('keydown', (event) => {
 
 window.addEventListener('resize', updateCamera);
 window.addEventListener('blur', muteAllVideos);
+window.boardAPI.onNativePaste?.((content) => pasteClipboard(content));
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) muteAllVideos();
 });

@@ -2,6 +2,7 @@
   const shared = window.SHARED_BOARD || { title: '共享画板', items: [] };
   const mappedFiles = new Map();
   let clipboardItem = null;
+  let nativePasteCallback = null;
   let openBoardCallback = null;
   let sequence = 0;
   const storageKey = `imb-editable-${shared.shareId || shared.title || 'board'}`;
@@ -99,6 +100,33 @@
     }
     return paths;
   }
+
+  addEventListener('paste', (event) => {
+    const target = event.target;
+    if (target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement || target?.isContentEditable) return;
+
+    const files = [...(event.clipboardData?.items || [])]
+      .filter((item) => item.kind === 'file' && clipboardExtension(item.type))
+      .map((item) => item.getAsFile())
+      .filter(Boolean);
+    if (files.length) {
+      event.preventDefault();
+      nativePasteCallback?.({ kind: 'paths', paths: files.map(mappedPath) });
+      return;
+    }
+
+    if (clipboardItem) {
+      event.preventDefault();
+      nativePasteCallback?.({ kind: 'board-item', item: clipboardItem });
+      return;
+    }
+
+    const text = event.clipboardData?.getData('text/plain') || '';
+    if (text) {
+      event.preventDefault();
+      nativePasteCallback?.({ kind: 'text', text });
+    }
+  }, true);
 
   function fileURL(value) {
     const mapped = mappedFiles.get(value);
@@ -263,6 +291,7 @@
   };
 
   window.boardAPI = {
+    nativePasteEvents: true,
     filePath: mappedPath,
     fileURL,
     basename,
@@ -313,6 +342,7 @@
       const text = await navigator.clipboard?.readText?.().catch(() => '');
       return text ? { kind: 'text', text } : { kind: 'none' };
     },
+    onNativePaste: (callback) => { nativePasteCallback = callback; },
     toggleAlwaysOnTop: async () => false,
     isAlwaysOnTop: async () => false,
     hideToTray: async () => true,
