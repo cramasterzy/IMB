@@ -70,6 +70,36 @@
     return key;
   }
 
+  function clipboardExtension(mime) {
+    const extensions = {
+      'image/png': '.png',
+      'image/jpeg': '.jpg',
+      'image/webp': '.webp',
+      'image/bmp': '.bmp',
+      'image/gif': '.gif',
+      'video/mp4': '.mp4',
+      'video/webm': '.webm',
+      'video/quicktime': '.mov'
+    };
+    return extensions[mime] || '';
+  }
+
+  async function readSystemClipboardMedia() {
+    if (!navigator.clipboard?.read) return [];
+    const clipboardItems = await navigator.clipboard.read();
+    const paths = [];
+    for (const clipboardEntry of clipboardItems) {
+      const mime = clipboardEntry.types.find((type) => clipboardExtension(type));
+      if (!mime) continue;
+      const blob = await clipboardEntry.getType(mime);
+      const extension = clipboardExtension(mime);
+      const prefix = mime.startsWith('video/') ? '粘贴视频' : mime === 'image/gif' ? '粘贴GIF' : '粘贴截图';
+      const file = new File([blob], `${prefix}-${Date.now()}-${paths.length + 1}${extension}`, { type: mime });
+      paths.push(mappedPath(file));
+    }
+    return paths;
+  }
+
   function fileURL(value) {
     const mapped = mappedFiles.get(value);
     return mapped ? mapped.url : new URL(String(value || ''), location.href).href;
@@ -277,6 +307,8 @@
       return true;
     },
     readClipboardMedia: async () => {
+      const paths = await readSystemClipboardMedia().catch(() => []);
+      if (paths.length) return { kind: 'paths', paths };
       if (clipboardItem) return { kind: 'board-item', item: clipboardItem };
       const text = await navigator.clipboard?.readText?.().catch(() => '');
       return text ? { kind: 'text', text } : { kind: 'none' };
