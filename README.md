@@ -1,7 +1,7 @@
 <h1 align="center">IMB — 像 PureRef 一样自由，为视频与 GIF 而生</h1>
 
 <p align="center">
-  <strong>PureRef-style freedom, rebuilt for real-time video, GIF, images, and text.</strong><br>
+  <strong>Infinite Canvas and PureRef alternative, rebuilt for real-time video, GIF, images, and text.</strong><br>
   不只是静态参考板：把动态灵感、声音和逐帧审片一起放进无限画布。
 </p>
 
